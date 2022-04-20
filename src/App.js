@@ -1,25 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import Course from "./components/course"
+import "./App.css"
+import witCrest from "./wit_crest.png"
 
-function App() {
+const App = () => {
+   // Substitute your module names here.
+   const modules = [
+    {
+      name: "WAD 2",
+      noLectures: 2,
+      noPracticals: 2,
+    },
+    {
+      name: "LPoCFS",
+      noLectures: 4,
+      noPracticals: 0,
+    },
+    {
+      name: "NF",
+      noLectures: 2,
+      noPracticals: 2,
+    },
+    {
+      name: "DO",
+      noLectures: 1,
+      noPracticals: 3,
+    },
+    {
+      name: "PP",
+      noLectures: 3,
+      noPracticals: 0,
+    },
+    {
+      name: "NoSQL D",
+      noLectures: 2,
+      noPracticals: 2,
+    }
+   ];
+  const name = "BSc Computer Forensic and Security - Modules table" // Substitute
+
   return (
-    <div className="App">
+    <>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <img className="center" src={witCrest} alt="logo" />
       </header>
-    </div>
+      <div className="course">
+        <Course title={name} modules={modules} />
+      </div>
+    </>
   );
-}
+};
 
-export default App;
+export default App
